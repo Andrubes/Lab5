@@ -44,6 +44,7 @@ public class Sudoku extends LatinSquare implements Serializable {
 	 */
 
 	private int iSqrtSize;
+	private eGameDifficulty eGD;
 
 	private HashMap<Integer, SudokuCell> cells = new HashMap<Integer, SudokuCell>();
 	
@@ -79,6 +80,18 @@ public class Sudoku extends LatinSquare implements Serializable {
 		fillRemaining(this.cells.get(Objects.hash(0, iSqrtSize)));
 		
 	}
+	
+	private Sudoku() {
+		this.eGD = eGameDifficulty.EASY;
+	}
+	
+	public Sudoku(int iSize, eGameDifficulty EGD) throws Exception{
+		this(iSize);
+		this.eGD = eGD;
+		RemoveZeros();
+	}
+
+	
 
 	/**
 	 * Sudoku - pass in a given two-dimensional array puzzle, create an instance.
@@ -570,6 +583,22 @@ public class Sudoku extends LatinSquare implements Serializable {
 			ar[index] = ar[i];
 			ar[i] = a;
 		}
+	}
+	
+	private void RemoveCells() {
+	
+	}
+	
+	private boolean IsDifficultyMet(int iPossibleValues) {
+		
+	}
+	
+	public int getiSize() {
+		
+	}
+	
+	private void SetRemaingCells() {
+		
 	}
 	
 		
